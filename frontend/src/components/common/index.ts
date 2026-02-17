@@ -25,7 +25,7 @@ export type {
 
 // Loader
 export { Loader } from './Loader';
-export type { LoaderProps, LoaderSize, LoaderVariant } from './Loader';
+export type { LoaderProps, LoaderSize } from './Loader';
 
 // Avatar
 export { Avatar } from './Avatar';
@@ -34,4 +34,8 @@ export type { AvatarProps, AvatarSize } from './Avatar';
 // Badge
 export { Badge } from './Badge';
 export type { BadgeProps, BadgeVariant, BadgeSize } from './Badge';
+
+// ThemeToggle
+export { ThemeToggle } from './ThemeToggle';
+export type { ThemeToggleProps, ThemeToggleSize } from './ThemeToggle';
 

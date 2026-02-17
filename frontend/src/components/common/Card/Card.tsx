@@ -40,7 +40,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     // Base styles
     const baseStyles = `
       rounded-lg
-      bg-white dark:bg-gray-800
+      ${variant !== 'glass' ? 'bg-background-paper dark:bg-surface-dark' : ''}
       transition-all duration-200 ease-in-out
       ${clickable ? 'cursor-pointer' : ''}
     `;
@@ -50,6 +50,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       default: 'border border-gray-200 dark:border-gray-700',
       outlined: 'border-2 border-gray-300 dark:border-gray-600',
       elevated: 'shadow-lg',
+      glass: 'bg-white/10 dark:bg-white/5 backdrop-blur-[10px] border border-white/20 dark:border-white/10 shadow-glass',
     };
 
     // Hover styles
@@ -82,7 +83,7 @@ const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
     return (
       <div
         ref={ref}
-        className={`p-6 border-b border-gray-200 dark:border-gray-700 ${className}`}
+        className={`px-6 py-5 border-b border-gray-200 dark:border-gray-700 ${className}`}
         {...rest}
       >
         {children}
@@ -99,7 +100,7 @@ CardHeader.displayName = 'Card.Header';
 const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(
   ({ children, className = '', ...rest }, ref) => {
     return (
-      <div ref={ref} className={`p-6 ${className}`} {...rest}>
+      <div ref={ref} className={`px-6 py-5 ${className}`} {...rest}>
         {children}
       </div>
     );
@@ -116,7 +117,7 @@ const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
     return (
       <div
         ref={ref}
-        className={`p-6 border-t border-gray-200 dark:border-gray-700 ${className}`}
+        className={`px-6 py-4 border-t border-gray-200 dark:border-gray-700 ${className}`}
         {...rest}
       >
         {children}

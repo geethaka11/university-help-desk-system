@@ -27,14 +27,14 @@ export const Badge: FC<BadgeProps> = ({
   const baseStyles = `
     inline-flex items-center justify-center gap-1
     font-semibold rounded-full
-    transition-colors duration-150
+    transition-colors duration-200
   `;
 
   // Size styles
   const sizeStyles = {
-    sm: dot ? 'w-2 h-2' : 'px-2 py-0.5 text-xs',
-    md: dot ? 'w-2.5 h-2.5' : 'px-3 py-1 text-sm',
-    lg: dot ? 'w-3 h-3' : 'px-4 py-1.5 text-base',
+    sm: dot ? 'w-2 h-2' : 'px-2.5 py-1 text-xs',
+    md: dot ? 'w-2.5 h-2.5' : 'px-3.5 py-1.5 text-sm',
+    lg: dot ? 'w-3 h-3' : 'px-5 py-2 text-base',
   };
 
   // Variant styles (filled)
@@ -48,15 +48,15 @@ export const Badge: FC<BadgeProps> = ({
     neutral: 'bg-gray-500 text-white',
   };
 
-  // Variant styles (outlined)
+  // Variant styles (outlined) — with dark-mode contrast fixes
   const outlinedVariants = {
-    primary: 'border-2 border-primary text-primary bg-primary/10',
-    secondary: 'border-2 border-secondary text-secondary bg-secondary/10',
-    success: 'border-2 border-success text-success bg-success/10',
-    warning: 'border-2 border-warning text-warning bg-warning/10',
-    error: 'border-2 border-error text-error bg-error/10',
-    info: 'border-2 border-info text-info bg-info/10',
-    neutral: 'border-2 border-gray-500 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800',
+    primary: 'border-2 border-primary text-primary bg-primary/10 dark:border-primary-light dark:text-primary-light dark:bg-primary-light/10',
+    secondary: 'border-2 border-secondary text-secondary bg-secondary/10 dark:border-secondary-light dark:text-secondary-light dark:bg-secondary-light/10',
+    success: 'border-2 border-success text-success bg-success/10 dark:border-success-light dark:text-success-light dark:bg-success-light/10',
+    warning: 'border-2 border-warning text-warning bg-warning/10 dark:text-warning-light dark:border-warning-light dark:bg-warning-light/10',
+    error: 'border-2 border-error text-error bg-error/10 dark:border-error-light dark:text-error-light dark:bg-error-light/10',
+    info: 'border-2 border-info text-info bg-info/10 dark:border-info-light dark:text-info-light dark:bg-info-light/10',
+    neutral: 'border-2 border-gray-500 text-text-primary dark:text-text-inverse bg-gray-100 dark:bg-surface-dark',
   };
 
   const variantStyle = outlined ? outlinedVariants[variant] : filledVariants[variant];

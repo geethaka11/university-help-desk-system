@@ -31,10 +31,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     // Base styles - always applied
     const baseStyles = `
-      inline-flex items-center justify-center gap-2
+      inline-flex items-center justify-center gap-2 whitespace-nowrap
       font-medium rounded-lg
-      transition-all duration-150 ease-in-out
-      focus:outline-none focus:ring-2 focus:ring-offset-2
+      transition-all duration-200 ease-in-out
+      focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-background-dark
       disabled:opacity-50 disabled:cursor-not-allowed
       ${fullWidth ? 'w-full' : ''}
     `;
@@ -57,15 +57,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       `,
       outlined: `
         bg-transparent border-2 border-primary text-primary
+        dark:border-primary-light dark:text-primary-light
         hover:bg-primary hover:text-white
         focus:ring-primary/50
-        active:bg-primary-dark active:border-primary-dark
+        active:bg-primary-dark active:border-primary-dark active:text-white
       `,
       text: `
         bg-transparent text-primary
-        hover:bg-primary/10
+        dark:text-primary-light
+        hover:bg-primary/10 dark:hover:bg-primary-light/15
         focus:ring-primary/50
-        active:bg-primary/20
+        active:bg-primary/20 dark:active:bg-primary-light/25
       `,
       danger: `
         bg-error text-white
@@ -78,7 +80,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     // Size styles
     const sizeStyles = {
-      sm: 'px-3 py-1.5 text-sm min-h-[32px]',
+      sm: 'px-4 py-2 text-sm min-h-[36px]',
       md: 'px-6 py-3 text-base min-h-[44px]',
       lg: 'px-8 py-4 text-lg min-h-[52px]',
     };

@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
-export type CardVariant = 'default' | 'outlined' | 'elevated';
+export type CardVariant = 'default' | 'outlined' | 'elevated' | 'glass';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   /**

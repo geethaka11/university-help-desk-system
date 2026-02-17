@@ -1,7 +1,7 @@
 /**
  * Application Entry Point - UWU Help Desk System
  * 
- * Initializes React application with Redux Provider.
+ * Initializes React application with Zustand stores.
  * Production-ready setup with strict mode and type safety.
  */
 

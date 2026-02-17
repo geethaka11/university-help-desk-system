@@ -1,5 +1,9 @@
 export type LoaderSize = 'sm' | 'md' | 'lg' | 'xl';
-export type LoaderVariant = 'spinner' | 'dots' | 'pulse';
+
+/**
+ * Pulse Ring loader — double-ripple rings expanding outward
+ * with a solid center dot.
+ */
 
 export interface LoaderProps {
   /**
@@ -7,29 +11,23 @@ export interface LoaderProps {
    * @default 'md'
    */
   size?: LoaderSize;
-  
-  /**
-   * Visual variant
-   * @default 'spinner'
-   */
-  variant?: LoaderVariant;
-  
+
   /**
    * Custom color (CSS color value)
    */
   color?: string;
-  
+
   /**
    * Center in parent container
    * @default false
    */
   centered?: boolean;
-  
+
   /**
    * Loading text
    */
   text?: string;
-  
+
   /**
    * Full screen overlay
    * @default false

@@ -65,9 +65,9 @@ export const Avatar: FC<AvatarProps> = ({
       'bg-secondary',
       'bg-info',
       'bg-warning',
-      'bg-purple-500',
-      'bg-pink-500',
-      'bg-indigo-500',
+      'bg-primary-light',
+      'bg-secondary-light',
+      'bg-secondary-dark',
     ];
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
@@ -114,7 +114,7 @@ export const Avatar: FC<AvatarProps> = ({
             ${statusSizeMap[size]}
             ${statusStyles[status]}
             rounded-full
-            border-2 border-white dark:border-gray-800
+            border-2 border-background-paper dark:border-background-dark
           `}
           role="status"
           aria-label={`Status: ${status}`}
